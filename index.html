@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataNature - Unified AI Data Intelligence Platform</title>
+    <meta name="description" content="DataNature offers a comprehensive AI-powered data intelligence platform for on-premises, cloud, and hybrid environments. Simplify data management and harness insights in a single unified platform.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="DataNature">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='24' fill='%236366f1'/%3E%3Cpath d='M96 48L144 96L96 144L48 96L96 48Z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DataNature</h2>
+                <span class="tagline">AI Data Platform</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#usecases" class="nav-link">AI360 Studio</a></li>
+                <li><a href="#agentic-ai" class="nav-link">Agentic AI</a></li>
+                <li><a href="#industries" class="nav-link">Industries</a></li>
+                <li><a href="#comparison" class="nav-link">Comparison</a></li>
+                <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#features" class="nav-link" onclick="closeMobileMenu()">Features</a></li>
+                <li><a href="#benefits" class="nav-link" onclick="closeMobileMenu()">Benefits</a></li>
+                <li><a href="#architecture" class="nav-link" onclick="closeMobileMenu()">Architecture</a></li>
+                <li><a href="#usecases" class="nav-link" onclick="closeMobileMenu()">AI360 Studio</a></li>
+                <li><a href="#agentic-ai" class="nav-link" onclick="closeMobileMenu()">Agentic AI</a></li>
+                <li><a href="#industries" class="nav-link" onclick="closeMobileMenu()">Industries</a></li>
+                <li><a href="#comparison" class="nav-link" onclick="closeMobileMenu()">Comparison</a></li>
+                <li><a href="#testimonials" class="nav-link" onclick="closeMobileMenu()">Success Stories</a></li>
+                <li><a href="#blog" class="nav-link" onclick="closeMobileMenu()">Blog</a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>AI-Powered Data Intelligence</span>
+                </div>
+                <h1 class="hero-title">
+                    Unified Data Intelligence Platform
+                    <span class="gradient-text">Powered by AI</span>
+                </h1>
+                <p class="hero-description">
+                    DataNature offers a comprehensive and all-in-one solution for big data platform powered by artificial intelligence, 
+                    simplifying the process of handling data and harnessing its insights in a single platform. 
+                    Deploy anywhere - on-premises, cloud, or hybrid environments.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Start Free Consultation
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Cost Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">45%</span>
+                        <span class="stat-label">Flexibility</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">35%</span>
+                        <span class="stat-label">Scalability</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card card-1">
+                        <i class="fas fa-database"></i>
+                        <span>Data Sources</span>
+                    </div>
+                    <div class="card card-2">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Processing</span>
+                    </div>
+                    <div class="card card-3">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="card card-4">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Native</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features of DataNature</h2>
+                <p>Comprehensive AI-powered data intelligence platform with enterprise-grade capabilities</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Unified Data Management</h3>
+                    <p>Centralize data from diverse sources with a single, cohesive platform for seamless data integration and analysis across your entire organization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Analytics Tools</h3>
+                    <p>Powerful suite of AI-driven tools for real-time data processing, predictive analytics, and intelligent automation to drive informed decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Low-Code Interface</h3>
+                    <p>User-friendly, low-code graphical interface that allows complex data operations without extensive programming knowledge.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Scalable & Flexible</h3>
+                    <p>Built on Kubernetes platform ensuring flexibility, scalability, and robustness for data applications of any size.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Rigorous security measures and comprehensive protocols to protect your data with enterprise-grade security standards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Real-time Processing</h3>
+                    <p>Process and analyze data in real-time with advanced streaming capabilities for immediate insights and decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefits for Every Stakeholder</h2>
+                <p>DataNature delivers value across your entire organization</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Executives & Senior Management</h3>
+                    </div>
+                    <ul class="benefit-list">
+                        <li>Strategic decision-making with data-driven insights</li>
+                        <li>Enhanced regulatory compliance</li>
+                        <li>Improved operational efficiency</li>
+                        <li>Reduced operational costs by 40%</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <i class="fas fa-server"></i>
+                        <h3>IT & Data Management Teams</h3>
+                    </div>
+                    <ul class="benefit-list">
+                        <li>Centralized data platform management</li>
+                        <li>Reduced complexity from various sources</li>
+                        <li>Automated provisioning and monitoring</li>
+                        <li>45% increased flexibility in tool selection</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Marketing & Customer Teams</h3>
+                    </div>
+                    <ul class="benefit-list">
+                        <li>Advanced customer segmentation</li>
+                        <li>Tailored marketing strategies</li>
+                        <li>Personalized customer experiences</li>
+                        <li>Enhanced customer engagement</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Data Scientists & Analysts</h3>
+                    </div>
+                    <ul class="benefit-list">
+                        <li>Powerful AI and analytics tools</li>
+                        <li>Real-time data processing capabilities</li>
+                        <li>Low-code GUI-based interface</li>
+                        <li>35% improvement in resource allocation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>Deploy Anywhere, Scale Everywhere</h2>
+                <p>Flexible deployment options to meet your infrastructure needs</p>
+            </div>
+            <div class="architecture-grid">
+                <div class="arch-card">
+                    <div class="arch-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>On-Premises</h3>
+                    <p>Deploy in your own data center with complete control over your data and infrastructure. Perfect for organizations with strict compliance requirements.</p>
+                    <ul class="arch-features">
+                        <li>Complete data sovereignty</li>
+                        <li>Custom security policies</li>
+                        <li>No vendor lock-in</li>
+                        <li>Full infrastructure control</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud</h3>
+                    <p>Leverage the power of cloud infrastructure with auto-scaling, managed services, and global availability across major cloud providers.</p>
+                    <ul class="arch-features">
+                        <li>Auto-scaling capabilities</li>
+                        <li>Global availability</li>
+                        <li>Managed services</li>
+                        <li>Pay-as-you-scale pricing</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Hybrid</h3>
+                    <p>Best of both worlds - combine on-premises control with cloud flexibility. Seamlessly integrate across environments for optimal performance.</p>
+                    <ul class="arch-features">
+                        <li>Seamless integration</li>
+                        <li>Flexible data placement</li>
+                        <li>Cost optimization</li>
+                        <li>Disaster recovery</li>
+                    </ul>
+                </div>
+                <div class="arch-card featured">
+                    <div class="arch-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Airgap Deployment</h3>
+                    <p>Deploy in completely isolated environments with no external network connectivity. Ideal for highly regulated industries and government organizations.</p>
+                    <ul class="arch-features">
+                        <li>Zero external connectivity</li>
+                        <li>Complete isolation</li>
+                        <li>Government-grade security</li>
+                        <li>Regulatory compliance</li>
+                    </ul>
+                    <div class="airgap-badge">
+                        <span>Highly Regulated Industries</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI360 Studio Enhanced Section -->
+    <section id="usecases" class="usecases">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI360 Studio - Customer Intelligence Platform</h2>
+                <p>Advanced AI capabilities running on top of DataNature platform</p>
+            </div>
+            <div class="ai360-overview">
+                <div class="ai360-content">
+                    <h3>360° Customer Intelligence</h3>
+                    <p>AI360 Studio provides a comprehensive, unified view of each customer by bringing together data from multiple touchpoints—sales, marketing, service, and digital interactions. Enhanced with AI-powered predictive analytics, intelligent recommendations, and automation.</p>
+                    <div class="ai360-features">
+                        <div class="ai360-feature">
+                            <i class="fas fa-eye"></i>
+                            <h4>Customer 360° View</h4>
+                            <p>Comprehensive data access with demographics, deposits, loans, and customer-specific details</p>
+                        </div>
+                        <div class="ai360-feature">
+                            <i class="fas fa-users"></i>
+                            <h4>Audience Builder</h4>
+                            <p>AI-powered dynamic segmentation for hyper-personalized campaigns</p>
+                        </div>
+                        <div class="ai360-feature">
+                            <i class="fas fa-robot"></i>
+                            <h4>AI360 Agent</h4>
+                            <p>Natural language processing for data insights and SQL query generation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usecases-grid">
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <h3>Predict Customer Churn</h3>
+                    <p>Leverage AI insights to reduce attrition and increase engagement with 85% accuracy in churn prediction.</p>
+                    <div class="usecase-benefits">
+                        <span class="benefit-tag">Predictive Analytics</span>
+                        <span class="benefit-tag">Customer Retention</span>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Activate Inactive Customers</h3>
+                    <p>Identify high-value customers and send tailored offers, such as cashback rewards, to re-engage them.</p>
+                    <div class="usecase-benefits">
+                        <span class="benefit-tag">Personalization</span>
+                        <span class="benefit-tag">Re-engagement</span>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Segment Lifestyle Changes</h3>
+                    <p>Create custom segments to target customers experiencing major life changes for personalized campaigns.</p>
+                    <div class="usecase-benefits">
+                        <span class="benefit-tag">Segmentation</span>
+                        <span class="benefit-tag">Lifecycle Marketing</span>
+                    </div>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Enable Personalized Campaigns</h3>
+                    <p>Reach the right customer with the right product at the right time through hyper-personalized campaigns.</p>
+                    <div class="usecase-benefits">
+                        <span class="benefit-tag">Real-time</span>
+                        <span class="benefit-tag">Hyper-personalization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agentic AI Capabilities Section -->
+    <section id="agentic-ai" class="agentic-ai">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agentic AI Capabilities</h2>
+                <p>Autonomous AI agents powered by advanced technologies like Dify</p>
+            </div>
+            <div class="agentic-content">
+                <div class="agentic-overview">
+                    <h3>Next-Generation Autonomous AI</h3>
+                    <p>DataNature integrates cutting-edge agentic AI capabilities, enabling autonomous decision-making and task execution. Our platform leverages technologies like Dify to create dynamic AI agents that adapt to evolving data landscapes and business requirements.</p>
+                </div>
+                <div class="agentic-features-grid">
+                    <div class="agentic-feature">
+                        <div class="agentic-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Autonomous Decision Making</h4>
+                        <p>AI agents that can independently analyze data, make decisions, and execute actions without human intervention.</p>
+                    </div>
+                    <div class="agentic-feature">
+                        <div class="agentic-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Dynamic Adaptation</h4>
+                        <p>Agents that continuously learn and adapt based on new data patterns and changing business requirements.</p>
+                    </div>
+                    <div class="agentic-feature">
+                        <div class="agentic-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Workflow Automation</h4>
+                        <p>Automated execution of complex data workflows, from ingestion to analysis and reporting.</p>
+                    </div>
+                    <div class="agentic-feature">
+                        <div class="agentic-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Intelligent Monitoring</h4>
+                        <p>Proactive monitoring and alerting systems that can predict and prevent issues before they impact operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose DataNature?</h2>
+                <p>Compare DataNature with leading big data platforms</p>
+            </div>
+            <div class="comparison-content">
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="feature-column">Features</div>
+                        <div class="platform-column datanature">DataNature</div>
+                        <div class="platform-column cloudera">Cloudera</div>
+                        <div class="platform-column snowflake">Snowflake</div>
+                        <div class="platform-column databricks">Databricks</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">AI Integration</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Native AI360 Studio</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-times"></i>
+                            <span>Limited AI</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-minus"></i>
+                            <span>Basic ML</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-check"></i>
+                            <span>ML Platform</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Agentic AI</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Agents</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-times"></i>
+                            <span>Not Available</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-times"></i>
+                            <span>Not Available</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-minus"></i>
+                            <span>Limited</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Airgap Deployment</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Full Support</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-check"></i>
+                            <span>Supported</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-times"></i>
+                            <span>Cloud Only</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-times"></i>
+                            <span>Cloud Only</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Regulatory Compliance</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Banking, Telco, Gov</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-check"></i>
+                            <span>Enterprise</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-check"></i>
+                            <span>Enterprise</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-minus"></i>
+                            <span>Limited</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Cost Efficiency</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>40% Reduction</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-minus"></i>
+                            <span>High Licensing</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-minus"></i>
+                            <span>Pay-per-query</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-minus"></i>
+                            <span>Compute Costs</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">User Interface</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Low-code GUI</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-minus"></i>
+                            <span>Technical</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-check"></i>
+                            <span>Web Interface</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-check"></i>
+                            <span>Notebooks</span>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Real-time Processing</div>
+                        <div class="feature-value datanature">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Streaming</span>
+                        </div>
+                        <div class="feature-value cloudera">
+                            <i class="fas fa-check"></i>
+                            <span>Streaming</span>
+                        </div>
+                        <div class="feature-value snowflake">
+                            <i class="fas fa-minus"></i>
+                            <span>Limited</span>
+                        </div>
+                        <div class="feature-value databricks">
+                            <i class="fas fa-check"></i>
+                            <span>Structured Streaming</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-benefits">
+                    <h3>DataNature Unique Advantages</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Unified AI Platform:</strong> Single solution for data management and AI analytics</li>
+                        <li><i class="fas fa-check"></i> <strong>Agentic AI:</strong> Autonomous AI agents for intelligent automation</li>
+                        <li><i class="fas fa-check"></i> <strong>Airgap Ready:</strong> Full deployment in isolated environments</li>
+                        <li><i class="fas fa-check"></i> <strong>Regulated Industries:</strong> Built for banking, telco, government, healthcare</li>
+                        <li><i class="fas fa-check"></i> <strong>Cost-Effective:</strong> 40% reduction in operational costs</li>
+                        <li><i class="fas fa-check"></i> <strong>Industry-Specific:</strong> Tailored solutions for each sector</li>
+                        <li><i class="fas fa-check"></i> <strong>On-Premises Control:</strong> Complete data sovereignty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Real results from our clients across various industries</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"DataNature transformed our data infrastructure at NIC Asia Bank, reducing operational costs by 40% while improving our analytics capabilities. The unified platform eliminated our data silos and enabled real-time customer insights."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>NIC Asia Bank</h4>
+                            <span>Leading Commercial Bank, Nepal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The AI360 integration helped us predict customer churn with 85% accuracy. Our retention rates improved by 30% within the first quarter, and we achieved a 25% increase in cross-selling opportunities."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Telecom Industry Leader</h4>
+                            <span>Major Telecommunications Provider</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Deploying DataNature on our hybrid infrastructure gave us the flexibility we needed while maintaining complete control over sensitive healthcare data. We achieved 50% faster data processing and improved patient outcomes."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Healthcare Provider</h4>
+                            <span>Regional Healthcare System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Use Cases Section -->
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry-Specific Solutions</h2>
+                <p>Tailored AI-powered data intelligence for every industry</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Banking & Finance</h3>
+                    <p>Comprehensive customer profiling, fraud detection, and personalized financial product recommendations.</p>
+                    <ul class="industry-features">
+                        <li>Real-time fraud detection with 99.5% accuracy</li>
+                        <li>Customer 360° view for personalized banking</li>
+                        <li>Risk assessment and compliance automation</li>
+                        <li>Predictive analytics for loan defaults</li>
+                    </ul>
+                    <div class="industry-results">
+                        <div class="result-item">
+                            <span class="result-number">40%</span>
+                            <span class="result-label">Reduction in Fraud Cases</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">25%</span>
+                            <span class="result-label">Increase in Cross-selling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Telecommunications</h3>
+                    <p>Network optimization, predictive maintenance, and customer churn analysis for enhanced service delivery.</p>
+                    <ul class="industry-features">
+                        <li>Network performance optimization</li>
+                        <li>Customer churn prediction and prevention</li>
+                        <li>Service quality monitoring</li>
+                        <li>Personalized service offerings</li>
+                    </ul>
+                    <div class="industry-results">
+                        <div class="result-item">
+                            <span class="result-number">30%</span>
+                            <span class="result-label">Reduction in Churn Rate</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">15%</span>
+                            <span class="result-label">Improvement in Network Uptime</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Patient data integration, predictive diagnostics, and personalized treatment plans for improved outcomes.</p>
+                    <ul class="industry-features">
+                        <li>Patient data integration and analysis</li>
+                        <li>Predictive diagnostics and treatment</li>
+                        <li>Resource optimization</li>
+                        <li>Population health management</li>
+                    </ul>
+                    <div class="industry-results">
+                        <div class="result-item">
+                            <span class="result-number">50%</span>
+                            <span class="result-label">Faster Data Processing</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">35%</span>
+                            <span class="result-label">Improvement in Patient Outcomes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airlines & Aviation</h3>
+                    <p>Customer experience enhancement through personalized offers, demand forecasting, and operational efficiency.</p>
+                    <ul class="industry-features">
+                        <li>Dynamic pricing optimization</li>
+                        <li>Customer journey personalization</li>
+                        <li>Demand forecasting and capacity planning</li>
+                        <li>Operational efficiency improvements</li>
+                    </ul>
+                    <div class="industry-results">
+                        <div class="result-item">
+                            <span class="result-number">20%</span>
+                            <span class="result-label">Increase in Revenue</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">45%</span>
+                            <span class="result-label">Improvement in Customer Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Insights & Articles</h2>
+                <p>Expert insights on data intelligence for regulated industries</p>
+            </div>
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Articles</button>
+                <button class="filter-btn" data-filter="banking">Banking</button>
+                <button class="filter-btn" data-filter="telecom">Telecom</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="government">Government</button>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog articles will be dynamically loaded here -->
+            </div>
+            <div class="blog-load-more">
+                <button class="btn btn-secondary" id="loadMoreBtn">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Transform Your Business Today</h2>
+                    <p>Ready to harness the power of unified data intelligence? Contact us for a free consultation and discover how DataNature can transform your organization.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>Canada: +1 5198520929</p>
+                                <p>Nepal: +977 9709181288</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@dlytica.com</p>
+                                <p>academy@dlytica.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Locations</h4>
+                                <p>Canada: 380 Wellington St, London, ON</p>
+                                <p>USA: 401 Park Ave S, New York</p>
+                                <p>Nepal: Balkumari, Lalitpur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" name="company" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <select id="interest" name="interest" required>
+                                <option value="">Select Interest</option>
+                                <option value="consultation">Free Architecture Consultation</option>
+                                <option value="demo">Platform Demo</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your data challenges" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataNature</h3>
+                    <p>Unified AI Data Intelligence Platform for modern enterprises. Deploy anywhere, scale everywhere.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">DataNature Platform</a></li>
+                        <li><a href="#">AI360 Studio</a></li>
+                        <li><a href="#">VisionCue</a></li>
+                        <li><a href="#">DocuContext</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Cloud Migration</a></li>
+                        <li><a href="#">Generative AI</a></li>
+                        <li><a href="#">Fraud Detection</a></li>
+                        <li><a href="#">Customer360</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Academy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dlytica Inc. All Rights Reserved.</p>
+                <p>ISO-certified organization specializing in Data Strategy, Architecture, and AI Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="cms.js"></script>
+</body>
+</html>
