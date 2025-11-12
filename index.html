@@ -34,20 +34,36 @@
                 <h2>DataNature</h2>
                 <span class="tagline">AI Data Platform</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#benefits" class="nav-link">Benefits</a></li>
-                <li><a href="#architecture" class="nav-link">Architecture</a></li>
-                <li><a href="#usecases" class="nav-link">AI360 Studio</a></li>
-                <li><a href="#agentic-ai" class="nav-link">Agentic AI</a></li>
-                <li><a href="#industries" class="nav-link">Industries</a></li>
-                <li><a href="#comparison" class="nav-link">Comparison</a></li>
-                <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                        Products <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                        <li><a href="#usecases" class="nav-link">AI360 Studio</a></li>
+                        <li><a href="#agentic-ai" class="nav-link">Agentic AI</a></li>
+                    </ul>
+                </li>
+                <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                        Resources <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                        <li><a href="#industries" class="nav-link">Industries</a></li>
+                        <li><a href="#comparison" class="nav-link">Comparison</a></li>
+                        <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+                        <li><a href="#blog" class="nav-link">Blog</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMobileMenu()">
+            <div class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -56,15 +72,31 @@
         <div class="mobile-menu" id="mobileMenu">
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link" onclick="closeMobileMenu()">Home</a></li>
-                <li><a href="#features" class="nav-link" onclick="closeMobileMenu()">Features</a></li>
-                <li><a href="#benefits" class="nav-link" onclick="closeMobileMenu()">Benefits</a></li>
-                <li><a href="#architecture" class="nav-link" onclick="closeMobileMenu()">Architecture</a></li>
-                <li><a href="#usecases" class="nav-link" onclick="closeMobileMenu()">AI360 Studio</a></li>
-                <li><a href="#agentic-ai" class="nav-link" onclick="closeMobileMenu()">Agentic AI</a></li>
-                <li><a href="#industries" class="nav-link" onclick="closeMobileMenu()">Industries</a></li>
-                <li><a href="#comparison" class="nav-link" onclick="closeMobileMenu()">Comparison</a></li>
-                <li><a href="#testimonials" class="nav-link" onclick="closeMobileMenu()">Success Stories</a></li>
-                <li><a href="#blog" class="nav-link" onclick="closeMobileMenu()">Blog</a></li>
+                <li><a href="#about" class="nav-link" onclick="closeMobileMenu()">About</a></li>
+                <li class="mobile-dropdown">
+                    <button class="nav-link mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                        Products <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="#features" class="nav-link" onclick="closeMobileMenu()">Features</a></li>
+                        <li><a href="#architecture" class="nav-link" onclick="closeMobileMenu()">Architecture</a></li>
+                        <li><a href="#usecases" class="nav-link" onclick="closeMobileMenu()">AI360 Studio</a></li>
+                        <li><a href="#agentic-ai" class="nav-link" onclick="closeMobileMenu()">Agentic AI</a></li>
+                    </ul>
+                </li>
+                <li><a href="#clients" class="nav-link" onclick="closeMobileMenu()">Clients</a></li>
+                <li class="mobile-dropdown">
+                    <button class="nav-link mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                        Resources <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="#benefits" class="nav-link" onclick="closeMobileMenu()">Benefits</a></li>
+                        <li><a href="#industries" class="nav-link" onclick="closeMobileMenu()">Industries</a></li>
+                        <li><a href="#comparison" class="nav-link" onclick="closeMobileMenu()">Comparison</a></li>
+                        <li><a href="#testimonials" class="nav-link" onclick="closeMobileMenu()">Success Stories</a></li>
+                        <li><a href="#blog" class="nav-link" onclick="closeMobileMenu()">Blog</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
         </div>
@@ -186,6 +218,55 @@
                     </div>
                     <h3>Real-time Processing</h3>
                     <p>Process and analyze data in real-time with advanced streaming capabilities for immediate insights and decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Transforming enterprises through next-generation data and AI solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Dlytica is a next-generation data and AI company helping enterprises transform their data into actionable intelligence. Our flagship platform, DataNature, unifies Lakehouse architecture, AI-driven analytics, and enterprise governance to build secure, scalable, and future-ready data ecosystems. Once the data is stored and governed within the Lakehouse, AI360 Studio activates it through a Customer Data Platform (CDP), enabling 360° customer intelligence, real-time insights, personalization, and predictive decision-making powered by Agentic AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Clients</h2>
+                <p>Trusted by leading organizations across industries</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <img src="images/client_logo/2.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/3.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/4.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/5.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/8.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/9.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/10.png" alt="Client Logo" loading="lazy">
+                </div>
+                <div class="client-logo">
+                    <img src="images/client_logo/11.png" alt="Client Logo" loading="lazy">
                 </div>
             </div>
         </div>

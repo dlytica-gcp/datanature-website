@@ -18,13 +18,14 @@
   const closeButton = document.getElementById("videoModalClose");
   const iframe = document.getElementById("videoFrame");
 
-  const hamburger = document.querySelector(".hamburger");
+  const hamburger = document.querySelector(".hamburger") || document.getElementById("hamburgerBtn");
   const mobileMenu = document.getElementById("mobileMenu");
   const navLinks = document.querySelectorAll("#mobileMenu .nav-link");
+  const navMenu = document.getElementById("navMenu");
 
   const architectureImage = document.getElementById("architectureImage");
   const architectureDetails = document.getElementById("architectureDetails");
-  const navAnchorLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const navAnchorLinks = document.querySelectorAll('.nav-link[href^="#"], .nav-dropdown-menu .nav-link[href^="#"], .mobile-dropdown-menu .nav-link[href^="#"]');
 
   let lastFocusedElement = null;
   let isModalOpen = false;
@@ -93,7 +94,10 @@
   }
 
   function toggleMobileMenu() {
-    if (!hamburger || !mobileMenu) return;
+    if (!hamburger || !mobileMenu) {
+      console.error("Hamburger or mobile menu not found", { hamburger, mobileMenu });
+      return;
+    }
 
     const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
     const nextState = !isExpanded;
@@ -101,6 +105,26 @@
     hamburger.classList.toggle("active", nextState);
     hamburger.setAttribute("aria-expanded", String(nextState));
     mobileMenu.classList.toggle("active", nextState);
+    
+    if (nextState) {
+      document.body.style.overflow = "hidden";
+      mobileMenu.style.display = "block";
+      setTimeout(() => {
+        mobileMenu.style.opacity = "1";
+        mobileMenu.style.visibility = "visible";
+        mobileMenu.style.transform = "translateY(0)";
+      }, 10);
+    } else {
+      mobileMenu.style.opacity = "0";
+      mobileMenu.style.visibility = "hidden";
+      mobileMenu.style.transform = "translateY(-100%)";
+      document.body.style.overflow = "";
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains("active")) {
+          mobileMenu.style.display = "none";
+        }
+      }, 300);
+    }
 
     const anchors = mobileMenu.querySelectorAll("a");
     anchors.forEach((link) => {
@@ -114,6 +138,7 @@
     hamburger.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
     mobileMenu.classList.remove("active");
+    document.body.style.overflow = "";
     mobileMenu
       .querySelectorAll("a")
       .forEach((link) => link.setAttribute("tabindex", "-1"));
@@ -265,7 +290,11 @@
     setHamburgerAccessibility();
 
     if (hamburger) {
-      hamburger.addEventListener("click", toggleMobileMenu);
+      hamburger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileMenu();
+      });
       hamburger.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
@@ -282,15 +311,100 @@
       if (window.innerWidth >= 992) closeMobileMenu();
     });
 
+    document.addEventListener("click", (e) => {
+      if (mobileMenu && mobileMenu.classList.contains("active")) {
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          closeMobileMenu();
+        }
+      }
+    });
+
     closeMobileMenu();
   }
 
-  initMobileNav();
-  initVideoModal();
-  initArchitectureImage();
-  initScrollSpy();
+  function initNavbarDropdowns() {
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    
+    dropdowns.forEach((dropdown) => {
+      const btn = dropdown.querySelector(".nav-dropdown-btn");
+      const menu = dropdown.querySelector(".nav-dropdown-menu");
+      
+      if (!btn || !menu) return;
+      
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+        
+        dropdowns.forEach((d) => {
+          if (d !== dropdown) {
+            const otherBtn = d.querySelector(".nav-dropdown-btn");
+            const otherMenu = d.querySelector(".nav-dropdown-menu");
+            if (otherBtn && otherMenu) {
+              otherBtn.setAttribute("aria-expanded", "false");
+              otherMenu.classList.remove("active");
+            }
+          }
+        });
+        
+        btn.setAttribute("aria-expanded", String(!isExpanded));
+        menu.classList.toggle("active", !isExpanded);
+      });
+      
+      menu.addEventListener("click", (e) => {
+        if (e.target.classList.contains("nav-link")) {
+          btn.setAttribute("aria-expanded", "false");
+          menu.classList.remove("active");
+        }
+      });
+    });
+    
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".nav-dropdown")) {
+        dropdowns.forEach((dropdown) => {
+          const btn = dropdown.querySelector(".nav-dropdown-btn");
+          const menu = dropdown.querySelector(".nav-dropdown-menu");
+          if (btn && menu) {
+            btn.setAttribute("aria-expanded", "false");
+            menu.classList.remove("active");
+          }
+        });
+      }
+    });
+  }
+
+  function toggleMobileDropdown(button) {
+    const dropdown = button.closest(".mobile-dropdown");
+    if (!dropdown) return;
+    
+    const isActive = dropdown.classList.contains("active");
+    
+    document.querySelectorAll(".mobile-dropdown").forEach((d) => {
+      if (d !== dropdown) {
+        d.classList.remove("active");
+      }
+    });
+    
+    dropdown.classList.toggle("active", !isActive);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      initMobileNav();
+      initVideoModal();
+      initArchitectureImage();
+      initScrollSpy();
+      initNavbarDropdowns();
+    });
+  } else {
+    initMobileNav();
+    initVideoModal();
+    initArchitectureImage();
+    initScrollSpy();
+    initNavbarDropdowns();
+  }
 
   window.toggleMobileMenu = toggleMobileMenu;
   window.closeMobileMenu = closeMobileMenu;
+  window.toggleMobileDropdown = toggleMobileDropdown;
   window.loadYoutube = loadYoutube;
 })();
