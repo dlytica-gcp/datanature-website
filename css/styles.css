@@ -41,6 +41,10 @@ body {
     overflow-x: hidden;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -308,6 +312,26 @@ body {
     transform: translateY(-2px);
 }
 
+.btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.btn-video {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-video:hover,
+.btn-video:focus-visible {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 .hero-stats {
     display: flex;
     gap: 2rem;
@@ -531,6 +555,67 @@ body {
     background: var(--bg-primary);
 }
 
+.architecture-visual {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.architecture-visual .section-header {
+    margin-bottom: 2.5rem;
+}
+
+.architecture-visual .section-header h2 {
+    color: var(--text-primary);
+}
+
+.architecture-visual .section-header p {
+    color: var(--text-secondary);
+}
+
+.architecture-visual figure {
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+}
+
+#architectureImage {
+    width: 100%;
+    max-width: 960px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#architectureImage:hover,
+#architectureImage:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -12px rgb(15 118 110 / 0.35);
+}
+
+#architectureImage:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+.architecture-visual figcaption {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.architecture-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#architectureDetails {
+    scroll-margin-top: 120px;
+}
+
 .architecture-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -687,6 +772,49 @@ body {
     padding: 2rem;
 }
 
+.video-modal .modal-content {
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.video-modal .modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-natural);
+}
+
+.video-modal .modal-body {
+    padding: 1.5rem;
+    background: white;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-caption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
 .article-meta {
     display: flex;
     gap: 1rem;
@@ -755,6 +883,14 @@ body {
     
     .modal-body {
         padding: 1.5rem;
+    }
+    
+    .video-modal .modal-body {
+        padding: 1.25rem;
+    }
+    
+    .video-caption {
+        font-size: 0.9rem;
     }
 }
 
@@ -1492,6 +1628,13 @@ body {
     color: white;
 }
 
+.footer-highlight {
+    color: #d1fae5;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -1579,6 +1722,15 @@ body {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }
+    
+    .architecture-visual {
+        margin-bottom: 2rem;
+    }
+    
+    #architectureImage {
+        border-radius: 16px;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -1669,6 +1821,14 @@ body {
     .card i {
         font-size: 1.5rem;
     }
+    
+    .architecture-visual figcaption {
+        font-size: 0.85rem;
+    }
+    
+    .footer-highlight {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1693,6 +1853,7 @@ body {
         width: 100%;
         justify-content: center;
     }
+    
 }
 
 /* Scroll animations */

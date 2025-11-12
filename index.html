@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataNature - Unified AI Data Intelligence Platform</title>
     <meta name="description" content="DataNature offers a comprehensive AI-powered data intelligence platform for on-premises, cloud, and hybrid environments. Simplify data management and harness insights in a single unified platform.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
@@ -13,10 +13,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="DataNature">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="autoplay=*, encrypted-media=*, accelerometer=*, gyroscope=*, picture-in-picture=*, clipboard-write=*, web-share=*">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='24' fill='%236366f1'/%3E%3Cpath d='M96 48L144 96L96 144L48 96L96 48Z' fill='white'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
 </head>
 <body>
-    <!-- Navigation -->
+    <div id="fileProtocolWarning" style="display: none; position: fixed; top: 0; left: 0; right: 0; background: #ff6b6b; color: white; padding: 15px; text-align: center; z-index: 10000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+        <strong>⚠️ Warning:</strong> This page is opened using file:// protocol. Some features (including YouTube videos) may not work correctly. 
+        <strong>Please use a local web server instead.</strong> 
+        <a href="README_SERVER.md" style="color: white; text-decoration: underline; margin-left: 10px;">See instructions</a>
+        <button onclick="document.getElementById('fileProtocolWarning').style.display='none'" style="margin-left: 15px; background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; border-radius: 3px;">✕ Dismiss</button>
+    </div>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -42,7 +53,6 @@
                 <span class="bar"></span>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link" onclick="closeMobileMenu()">Home</a></li>
@@ -60,7 +70,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -82,6 +91,10 @@
                         <i class="fas fa-play"></i>
                         Start Free Consultation
                     </a>
+                    <button type="button" class="btn btn-video" id="watchVideoButton" aria-haspopup="dialog" aria-expanded="false">
+                        <i class="fas fa-video"></i>
+                        Watch Video
+                    </button>
                     <a href="#features" class="btn btn-secondary">
                         <i class="fas fa-info-circle"></i>
                         Learn More
@@ -125,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
@@ -179,7 +191,6 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section id="benefits" class="benefits">
         <div class="container">
             <div class="section-header">
@@ -239,74 +250,84 @@
         </div>
     </section>
 
-    <!-- Architecture Section -->
     <section id="architecture" class="architecture">
         <div class="container">
-            <div class="section-header">
-                <h2>Deploy Anywhere, Scale Everywhere</h2>
-                <p>Flexible deployment options to meet your infrastructure needs</p>
+            <div class="architecture-visual" role="presentation">
+                <div class="section-header architecture-visual-header">
+                    <h2>Architecture Overview</h2>
+                    <p>DataNature delivers value across your entire organization</p>
+                </div>
+                <figure>
+                    <img id="architectureImage" src="images/DataNature_Architecture.png" alt="DataNature platform architecture diagram illustrating deploy anywhere capabilities" role="button" tabindex="0" aria-describedby="architectureImageCaption">
+                    <figcaption id="architectureImageCaption">Click to explore deployment models</figcaption>
+                </figure>
             </div>
-            <div class="architecture-grid">
-                <div class="arch-card">
-                    <div class="arch-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>On-Premises</h3>
-                    <p>Deploy in your own data center with complete control over your data and infrastructure. Perfect for organizations with strict compliance requirements.</p>
-                    <ul class="arch-features">
-                        <li>Complete data sovereignty</li>
-                        <li>Custom security policies</li>
-                        <li>No vendor lock-in</li>
-                        <li>Full infrastructure control</li>
-                    </ul>
+            <div id="architectureDetails" class="architecture-details" tabindex="-1">
+                <div class="section-header">
+                    <h2>Deploy Anywhere, Scale Everywhere</h2>
+                    <p>Flexible deployment options to meet your infrastructure needs</p>
                 </div>
-                <div class="arch-card">
-                    <div class="arch-icon">
-                        <i class="fas fa-cloud"></i>
+                <div class="architecture-grid">
+                    <div class="arch-card">
+                        <div class="arch-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>On-Premises</h3>
+                        <p>Deploy in your own data center with complete control over your data and infrastructure. Perfect for organizations with strict compliance requirements.</p>
+                        <ul class="arch-features">
+                            <li>Complete data sovereignty</li>
+                            <li>Custom security policies</li>
+                            <li>No vendor lock-in</li>
+                            <li>Full infrastructure control</li>
+                        </ul>
                     </div>
-                    <h3>Cloud</h3>
-                    <p>Leverage the power of cloud infrastructure with auto-scaling, managed services, and global availability across major cloud providers.</p>
-                    <ul class="arch-features">
-                        <li>Auto-scaling capabilities</li>
-                        <li>Global availability</li>
-                        <li>Managed services</li>
-                        <li>Pay-as-you-scale pricing</li>
-                    </ul>
-                </div>
-                <div class="arch-card">
-                    <div class="arch-icon">
-                        <i class="fas fa-network-wired"></i>
+                    <div class="arch-card">
+                        <div class="arch-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud</h3>
+                        <p>Leverage the power of cloud infrastructure with auto-scaling, managed services, and global availability across major cloud providers.</p>
+                        <ul class="arch-features">
+                            <li>Auto-scaling capabilities</li>
+                            <li>Global availability</li>
+                            <li>Managed services</li>
+                            <li>Pay-as-you-scale pricing</li>
+                        </ul>
                     </div>
-                    <h3>Hybrid</h3>
-                    <p>Best of both worlds - combine on-premises control with cloud flexibility. Seamlessly integrate across environments for optimal performance.</p>
-                    <ul class="arch-features">
-                        <li>Seamless integration</li>
-                        <li>Flexible data placement</li>
-                        <li>Cost optimization</li>
-                        <li>Disaster recovery</li>
-                    </ul>
-                </div>
-                <div class="arch-card featured">
-                    <div class="arch-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="arch-card">
+                        <div class="arch-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Hybrid</h3>
+                        <p>Best of both worlds - combine on-premises control with cloud flexibility. Seamlessly integrate across environments for optimal performance.</p>
+                        <ul class="arch-features">
+                            <li>Seamless integration</li>
+                            <li>Flexible data placement</li>
+                            <li>Cost optimization</li>
+                            <li>Disaster recovery</li>
+                        </ul>
                     </div>
-                    <h3>Airgap Deployment</h3>
-                    <p>Deploy in completely isolated environments with no external network connectivity. Ideal for highly regulated industries and government organizations.</p>
-                    <ul class="arch-features">
-                        <li>Zero external connectivity</li>
-                        <li>Complete isolation</li>
-                        <li>Government-grade security</li>
-                        <li>Regulatory compliance</li>
-                    </ul>
-                    <div class="airgap-badge">
-                        <span>Highly Regulated Industries</span>
+                    <div class="arch-card featured">
+                        <div class="arch-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Airgap Deployment</h3>
+                        <p>Deploy in completely isolated environments with no external network connectivity. Ideal for highly regulated industries and government organizations.</p>
+                        <ul class="arch-features">
+                            <li>Zero external connectivity</li>
+                            <li>Complete isolation</li>
+                            <li>Government-grade security</li>
+                            <li>Regulatory compliance</li>
+                        </ul>
+                        <div class="airgap-badge">
+                            <span>Highly Regulated Industries</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI360 Studio Enhanced Section -->
     <section id="usecases" class="usecases">
         <div class="container">
             <div class="section-header">
@@ -385,7 +406,6 @@
         </div>
     </section>
 
-    <!-- Agentic AI Capabilities Section -->
     <section id="agentic-ai" class="agentic-ai">
         <div class="container">
             <div class="section-header">
@@ -431,7 +451,6 @@
         </div>
     </section>
 
-    <!-- Platform Comparison Section -->
     <section id="comparison" class="comparison">
         <div class="container">
             <div class="section-header">
@@ -597,7 +616,6 @@
         </div>
     </section>
 
-    <!-- Success Stories Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -642,7 +660,6 @@
         </div>
     </section>
 
-    <!-- Industry Use Cases Section -->
     <section id="industries" class="industries">
         <div class="container">
             <div class="section-header">
@@ -746,7 +763,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog" class="blog">
         <div class="container">
             <div class="section-header">
@@ -761,7 +777,6 @@
                 <button class="filter-btn" data-filter="government">Government</button>
             </div>
             <div class="blog-grid" id="blogGrid">
-                <!-- Blog articles will be dynamically loaded here -->
             </div>
             <div class="blog-load-more">
                 <button class="btn btn-secondary" id="loadMoreBtn">Load More Articles</button>
@@ -769,7 +784,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
@@ -838,7 +852,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -885,9 +898,61 @@
             </div>
         </div>
     </footer>
-
-
-    <script src="script.js"></script>
-    <script src="cms.js"></script>
+    
+    <div id="videoModal" class="modal hidden video-modal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <h3 id="videoModalTitle">Watch DataNature in Action</h3>
+                <button type="button" class="modal-close" id="videoModalClose" aria-label="Close video">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="video-wrapper">
+                    <iframe id="videoFrame" src="" title="DataNature overview video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Play this quick overview to see how DataNature unifies your data intelligence workflows.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        (function() {
+            const isFileProtocol = window.location.protocol === 'file:';
+            
+            if (isFileProtocol) {
+                const warningBanner = document.getElementById('fileProtocolWarning');
+                if (warningBanner) {
+                    warningBanner.style.display = 'block';
+                }
+            }
+            
+            if (isFileProtocol) {
+                const originalWarn = console.warn;
+                console.warn = function(...args) {
+                    const message = args.join(' ');
+                    if (message.includes('Potential permissions policy violation')) {
+                        return;
+                    }
+                    originalWarn.apply(console, args);
+                };
+                
+                const manifestLink = document.querySelector('link[rel="manifest"]');
+                if (manifestLink) {
+                    manifestLink.onerror = function() {
+                        console.info('Manifest not available in file:// protocol. Serve over HTTP/HTTPS for full functionality.');
+                    };
+                }
+            }
+            
+            const script = document.createElement('script');
+            script.src = 'js/cms.js';
+            script.onerror = function() {
+                this.remove();
+            };
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 </html>
