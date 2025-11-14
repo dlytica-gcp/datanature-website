@@ -517,6 +517,8 @@ body.modal-open {
     background: var(--gradient-natural);
     position: relative;
     overflow: hidden;
+    padding-top: 100px;
+    scroll-margin-top: 70px;
 }
 
 .hero::before {
@@ -761,6 +763,7 @@ body.modal-open {
 .about {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 .about-content {
@@ -799,6 +802,7 @@ body.modal-open {
 .clients {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .clients-grid {
@@ -882,6 +886,7 @@ body.modal-open {
 .features {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .features-grid {
@@ -936,6 +941,7 @@ body.modal-open {
 .benefits {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 .benefits-grid {
@@ -998,6 +1004,7 @@ body.modal-open {
 .architecture {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .architecture-visual {
@@ -1069,7 +1076,7 @@ body.modal-open {
 }
 
 #architectureDetails {
-    scroll-margin-top: 120px;
+    scroll-margin-top: 70px;
 }
 
 .architecture-grid {
@@ -1164,6 +1171,7 @@ body.modal-open {
 .blog {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 /* Modal Styles */
@@ -1465,6 +1473,7 @@ body.modal-open {
 .usecases {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 .ai360-overview {
@@ -1585,6 +1594,7 @@ body.modal-open {
 .industries {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .industries-grid {
@@ -1684,6 +1694,7 @@ body.modal-open {
 .agentic-ai {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 .agentic-content {
@@ -1762,6 +1773,7 @@ body.modal-open {
 .comparison {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .comparison-content {
@@ -1894,6 +1906,7 @@ body.modal-open {
 .testimonials {
     padding: 6rem 0;
     background: var(--bg-primary);
+    scroll-margin-top: 70px;
 }
 
 .testimonials-grid {
@@ -1947,6 +1960,7 @@ body.modal-open {
 .contact {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    scroll-margin-top: 70px;
 }
 
 .contact-content {
@@ -2311,6 +2325,11 @@ body.modal-open {
         padding: 0.15rem 0.4rem;
     }
     
+    .hero {
+        padding-top: 100px;
+        min-height: calc(100vh - 70px);
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -2395,6 +2414,15 @@ body.modal-open {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+    
+    .hero {
+        padding-top: 100px;
+        min-height: calc(100vh - 70px);
+    }
+    
+    .hero-container {
+        /* Consistent 100px padding-top maintained for visible gap */
     }
     
     .hero-title {
@@ -2615,7 +2643,8 @@ table {
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 4rem 0;
+        padding-top: 100px;
+        padding-bottom: 4rem;
     }
     
     .hero-container {
